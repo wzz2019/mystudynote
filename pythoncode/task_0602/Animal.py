@@ -6,7 +6,7 @@ class Animal():
         self.sex=sex
 
     def run(self):
-        print(f"{self.name} can run")
+        print("会跑")
 
     def shout(self):
-        print(f"{self.name} can shout")
+        print("会叫")
