@@ -21,7 +21,7 @@ class Cat(Animal):
         print(f"{self.name} {self.color} {self.age} {self.sex} {self.hair} 会捉老鼠")
     #覆写父类的方法
     def shout(self):
-        print(f"{self.name} {self.color} {self.age} {self.sex} {self.hair} 会喵喵叫")
+        print(f"{self.name} {self.color} {self.age} {self.sex} {self.hair} 喵喵叫")
 
 class Dog(Animal):
     def __init__(self,color,age,sex):
@@ -30,9 +30,9 @@ class Dog(Animal):
         self.hair="长毛"
 
     def watch_home(self):
-        print(f"{self.name} {self.color} {self.age} {self.sex} {self.hair} 会捉老鼠")
+        print(f"{self.name} {self.color} {self.age} {self.sex} {self.hair} 会看家")
     def shout(self):
-        print(f"{self.name} {self.color} {self.age} {self.sex} {self.hair} 会喵喵叫")
+        print(f"{self.name} {self.color} {self.age} {self.sex} {self.hair} 汪汪叫")
 
 if __name__=="__main__":
     animal_a=Animal(name="兔子",color="白色",age="3个月大",sex="公的")
