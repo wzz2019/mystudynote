@@ -1,0 +1,9 @@
+eb1: &eb1
+  battery: 20
+  km: 150
+eb2: &eb2
+  battery: 20
+  km: 250
+
+default:
+  <<: *eb2

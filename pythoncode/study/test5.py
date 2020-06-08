@@ -12,6 +12,7 @@ class Animal():
         print(f"{self.name} {self.color} {self.age} {self.sex} ")
 
 class Cat(Animal):
+
     def __init__(self,color,age,sex):   #定义自己的构造函数
         name = "猫"
         Animal.__init__(self,name,color,age,sex)    #调用父类的构造函数

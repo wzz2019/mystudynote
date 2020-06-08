@@ -19,7 +19,9 @@ class person():
 
 #实例化类
 p=person('小明',10,100)
+# print(dir(p))
 p.get_age()
+
 p.__weight=80
 p.__height=80
 p.get_weight()
