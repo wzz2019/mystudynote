@@ -2,3 +2,6 @@
 .idea/
 */venv/
 **/.pytest**
+**/tmp/
+**/temp/
+*/temp/
