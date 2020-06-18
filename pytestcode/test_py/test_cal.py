@@ -1,6 +1,8 @@
 from cal import Calculator
 import pytest
 class TestA:
+    def 
+
     def testadd1(self):
         cal=Calculator()
         assert 3==cal.add(1,2)
