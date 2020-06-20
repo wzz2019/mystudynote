@@ -39,9 +39,9 @@ def fixture4():
     yield fixture4
     print("【4-2】function teardown")
 
-#使用参数autouse="true"，那么就可以在py文件中执行时自动调用，无需手动引用
-@pytest.fixture(scope="function",autouse="true")
-def fixture5():
-    print("【5-1】function setup")
-    yield
-    print("【5-2】function teardown")
+# #使用参数autouse="true"，那么就可以在py文件中执行时自动调用，无需手动引用
+# @pytest.fixture(scope="function",autouse="true")
+# def fixture5():
+#     print("【5-1】function setup")
+#     yield
+#     print("【5-2】function teardown")
