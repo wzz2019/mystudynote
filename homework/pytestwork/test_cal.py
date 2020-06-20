@@ -41,3 +41,4 @@ class TestA:
         cal=Calculator()
         assert c==cal.div(a,b)
 
+
