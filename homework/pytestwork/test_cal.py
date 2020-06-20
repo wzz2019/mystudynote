@@ -2,6 +2,7 @@ import yaml
 import pytest
 from cal import Calculator
 
+@pytest.mark.usefixtures("test_fixture")
 @pytest.mark.usefixtures("cal_fixture")
 class TestA:
 
