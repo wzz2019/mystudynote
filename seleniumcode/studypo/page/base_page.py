@@ -14,7 +14,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class BasePage():
     # 定义url变量
-    _base_url = ""
+    __base_url = ""
     # 初始化driver
     def __init__(self,driver_init=None):
 
@@ -30,11 +30,11 @@ class BasePage():
             self.driver=driver_init
 
         #定义url
-        if self._base_url != "":
-            self.driver.get(self._base_url)
+        if self.__base_url != "":
+            self.driver.get(self.__base_url)
 
         #定义显式等待时间
-        self.wait=WebDriverWait(self.driver,10)
+        self.__wait=WebDriverWait(self.driver,10)
 
     # 封装显式等待查找单一元素
     def find_element(self,*loc):
@@ -44,7 +44,7 @@ class BasePage():
         :return:element对象
         '''
         try:
-            self.wait.until(EC.visibility_of_element_located(loc))
+            self.__wait.until(EC.visibility_of_element_located(loc))
             return self.driver.find_element(*loc)
         except:
             print("未找到元素")
