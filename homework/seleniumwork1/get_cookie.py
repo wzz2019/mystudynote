@@ -1,4 +1,4 @@
-import json
+import json,time
 
 from time import sleep
 from selenium import webdriver
@@ -9,8 +9,14 @@ def test_savecookie():
     option=Options()
     option.debugger_address="localhost:9222"
     driver=webdriver.Chrome(options=option)
+
+    # driver = webdriver.Chrome()
+
     driver.get("https://work.weixin.qq.com/wework_admin/frame")
+
 
     cookies=driver.get_cookies()
     with open("cookie.json","w") as f:
         json.dump(cookies,f)
+
+    driver.quit()
