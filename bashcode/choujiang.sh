@@ -15,25 +15,23 @@ rand2(){
     done
 }
 #缩小取数范围：随机取数
-#每次取值行数都不固定
+#这种符合条件就输出结果，猜拳的方式，那么结果就会有很多行
 rand3(){
    local seeds=`while read line; do echo ${line// /..}; done <a.txt`
    seeds=`for seed in $seeds;do (( $RANDOM % 2 )) && echo $seed; done`
    echo "$seeds"
 }
-
 #继续缩小取数范围：只取1行数据
-#此版本会出现结果为空的情况
+#从每次的结果集中继续猜拳，直到只有一行数据
+#会出现剩下2行数据都没猜拳成功，导致输出空结果的情况，
+#解决方案：如果为空，重新来一轮
 rand4(){
    local seeds=`while read line; do echo ${line// /..}; done <a.txt`
    local count=0
    while [[ $count != 1 ]];do
         seeds=`for seed in $seeds;do (( $RANDOM % 2 )) && echo $seed; done`
-        #echo "$seeds"
-        #echo "$seeds"|wc -l
         count=`echo "$seeds"|wc -l`
    done
-   #echo "$seeds"
    if [[ $seeds == "" ]];then
         rand4
    else
