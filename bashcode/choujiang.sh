@@ -43,8 +43,23 @@ rand4(){
 #需要处理重复数据
 res(){
     for((i=0;i<10;i++)); do
-        rand4
+        tmp=`rand4`
+        while [[ `is_repeat $tmp` == 1 ]];do
+            tmp=`rand4`
+        done
+        arrs[i]=$tmp
     done
+    echo ${arrs[@]}
+}
+#判断传入的参数是否在数组中，是的话返回1
+is_repeat(){
+    for arr in ${arrs[@]}; do
+        if [[ $arr == $1 ]];then
+            echo 1
+            return 1
+         fi
+    done
+    echo 0
 }
 
-rand1
+res
